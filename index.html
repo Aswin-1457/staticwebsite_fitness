@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        background-color: black;
+        padding: 20px;
+        position: fixed;
+        width: 97%;
+      }
+      .unli {
+        display: flex;
+        justify-content: end;
+        margin-right: 50px;
+        margin-top: 10px;
+        gap: 50px;
+      }
+      .unli li {
+        list-style-type: none;
+      }
+      .unli li a {
+        text-decoration: none;
+        color: white;
+      }
+      .unli a:hover {
+        color: rgba(100, 201, 69, 0.938);
+      }
+      .main-img {
+        width: 100px;
+        height: 31px;
+        margin-right: 400px;
+      }
+      .fitness-image {
+        width: 1240px;
+        height: 600px;
+      }
+      .cont-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        /* margin: 50px; */
+        background-color: rgb(162, 201, 40, 1);
+        color: white;
+        width: 100%;
+        height: 100%;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+      }
+      .tips-section1 {
+        display: grid;
+        background-color: rgba(162, 201, 40, 1);
+        grid-template-rows: repeat(2, 1fr);
+        padding: 100px;
+        padding-bottom: 0px;
+      }
+      .tip {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: white;
+        width: 1050px;
+        height: 350px;
+      }
+      .tip-img {
+        width: 525px;
+        height: 350px;
+      }
+      .tip-text {
+        margin: 30px;
+        text-align: center;
+      }
+      .tip-h3 {
+        color: red;
+        font-size: 18px;
+      }
+      .tip-h2 {
+        color: rgba(162, 201, 40, 1);
+        font-size: 28px;
+      }
+      .tip-p {
+        font-size: 16px;
+        gap: 1px;
+      }
+      .tip-a {
+        color: rgba(162, 201, 40, 1);
+      }
+      .tips-section2 {
+        display: grid;
+        background-color: rgb(200, 69, 69);
+        grid-template-rows: repeat(4, 1fr);
+        height: 1400px;
+        padding-left: 100px;
+      }
+      .tip-imgs {
+        width: 350px;
+        height: 350px;
+      }
+      .tip-imgl {
+        width: 700px;
+        height: 350px;
+      }
+      .bg-gl {
+        background-color: rgba(162, 201, 40, 1);
+        width: 660px;
+        height: 310px;
+        padding: 20px;
+      }
+      .bg-gl-h {
+        font-size: 32px;
+        color: white;
+        text-align: center;
+      }
+      .bg-gl-p {
+        text-align: center;
+        color: white;
+      }
+      .bg-gls {
+        background-color: rgba(162, 201, 40, 1);
+        width: 320px;
+        height: 310px;
+        padding: 20px;
+        margin-left: 170px;
+      }
+      .bg-gl-h {
+        font-size: 32px;
+        color: white;
+        text-align: center;
+      }
+      .bg-gl-p {
+        text-align: center;
+        color: white;
+      }
+      .footer {
+        background-image: url(https://themewagon.github.io/fitness-1/assets/img/footer.jpg);
+        width: 100%;
+        height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* position: relative; */
+      }
+      .text {
+        padding: 200px;
+        text-align: center;
+        color: white;
+      }
+      .last-b {
+        background-color: black;
+        width: 97%;
+        height: 300px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        color: white;
+        padding: 50px;
+      }
+      .last-t {
+        margin-right: 100px;
+      }
+      .last {
+        grid-column: 3;
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 80px;
+        margin-right: 50px;
+      }
+      .last-form {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+      .inp1 {
+        width: 150px;
+        height: 40px;
+        color: white;
+        border-radius: 3px;
+        border: none;
+      }
+      .inp1::placeholder {
+        padding-left: 10px;
+        color: gray;
+      }
+      .inp1:focus {
+        outline: none;
+      }
+      .inp2 {
+        width: 340px;
+        height: 40px;
+        color: white;
+        border: none;
+        border-radius: 3px;
+      }
+      .inp2::placeholder {
+        padding-left: 10px;
+        color: gray;
+      }
+      .inp2:focus {
+        outline: none;
+      }
+      .last-fbtn {
+        background-color: rgba(162, 201, 40, 1);
+        color: white;
+        text-align: center;
+        width: 140px;
+        height: 42px;
+        font-size: 14px;
+        border: none;
+        border-radius: 2px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 12px;
+        margin: 15px 0;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      /* Specific background colors */
+      .fb {
+        background-color: #1877f2;
+      }
+      .tw {
+        background-color: #1da1f2;
+      }
+      .yt {
+        background-color: #ff0000;
+      }
+      .in {
+        background-color: #0a66c2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <img
+          src="https://themewagon.github.io/fitness-1/assets/img/logo.png"
+          alt=""
+          class="main-img"
+        />
+      </div>
+      <div class="nav-buttons">
+        <nav>
+          <ul class="unli">
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">HOW IT WORKS</a></li>
+            <li><a href="">SERVICES</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Zml0bmVzcyUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+        alt=""
+        class="fitness-image"
+      />
+    </div>
+    <div class="cont-grid">
+      <div class="box">
+        <i class="icon-suitcase icon-lg"></i>
+        <h2>Resources</h2>
+        <p>
+          Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+          Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.
+        </p>
+        <p>Explore more</p>
+      </div>
+      <div class="box">
+        <h2>Training&Funding</h2>
+        <p>
+          Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+          Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.
+        </p>
+        <p>Browse training</p>
+      </div>
+      <div class="box">
+        <h2>Connect</h2>
+        <p>
+          Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+          Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.
+        </p>
+        <p>Connect now</p>
+      </div>
+      <div class="box">
+        <h2>Communicate</h2>
+        <p>
+          Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+          Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.
+        </p>
+        <p>Start now</p>
+      </div>
+    </div>
+    <div class="tips-section1">
+      <div class="tip">
+        <div class="tip-text">
+          <h3 class="tip-h3">IT's ALL ABOUT</h3>
+          <h2 class="tip-h2">FITNESS FIRST</h2>
+          <p class="tip-p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis unde porro illo cupiditate error, quia quae animi id
+            amet aliquid non suscipit asperiores ut libero delectus eius et!
+          </p>
+          <a href="" class="tip-a">Read More</a>
+        </div>
+        <div>
+          <img
+            src="https://themewagon.github.io/fitness-1/assets/img/yoga.jpg"
+            alt=""
+            class="tip-img"
+          />
+        </div>
+      </div>
+      <div class="tip">
+        <div>
+          <img
+            src="https://themewagon.github.io/fitness-1/assets/img/apple-watch.jpg"
+            alt=""
+            class="tip-img"
+          />
+        </div>
+        <div class="tip-text">
+          <h3 class="tip-h3">LOVE</h3>
+          <h2 class="tip-h2">YOUR BODY</h2>
+          <p class="tip-p">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Consectetur porro velit modi adipisci hic illum deleniti eaque est
+            aut voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Veniam, perspiciatis?
+          </p>
+          <a href="" class="tip-a">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="tips-section2">
+      <div class="tip">
+        <div>
+          <img
+            src="https://themewagon.github.io/fitness-1/assets/img/jogging.jpg"
+            alt=""
+            class="tip-imgs"
+          />
+        </div>
+        <div>
+          <img
+            src="https://themewagon.github.io/fitness-1/assets/img/beach.jpg"
+            alt=""
+            class="tip-imgl"
+          />
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-text">
+          <h3 class="tip-h3">TRACK YOUR</h3>
+          <h2 class="tip-h2">LIFESTYLE</h2>
+          <p class="tip-p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            a nobis in quam placeat error, molestiae at, pariatur iusto,
+            deleniti nemo nisi totam. Tempora, consequatur.
+          </p>
+        </div>
+        <div class="bg-gl">
+          <h2 class="bg-gl-h">SUMMER OF FUN</h2>
+          <p class="bg-gl-p">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione ea
+            a iste beatae, possimus laudantium accusantium fugiat error ut
+            unde.olestiae at, pariatur iusto, deleniti nemo nisi totam. Tempora,
+            consequatur.
+          </p>
+        </div>
+      </div>
+      <div class="tip">
+        <div>
+          <img
+            src="https://themewagon.github.io/fitness-1/assets/img/self-involved.jpg"
+            alt=""
+            class="tip-imgl"
+          />
+        </div>
+        <div>
+          <img
+            src="https://themewagon.github.io/fitness-1/assets/img/eating-habits.jpg"
+            alt=""
+            class="tip-imgs"
+          />
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-text">
+          <h3 class="tip-h3">HELPING YOU</h3>
+          <h2 class="tip-h2">GET INVOLVED IN YOURSELF</h2>
+          <p class="tip-p">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+            voluptate beatae dolores illum, necessitatibus, at quam expedita
+            sint pariatur nam enim unde atque, nobis excepturi voluptas suscipit
+            ea deserunt dolorum deleniti facere eos.
+          </p>
+        </div>
+        <div class="bg-gls">
+          <h3 style="text-align: center; color: white">IMPROVE YOUR</h3>
+          <h2 class="bg-gl-h">EATING HABITS</h2>
+          <p class="bg-gl-p">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo quas
+            cupiditate suscipit nam alias illum numquam sapiente odit modi quam?
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="text">
+        <h1>We launch leaders with big ideas</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+          natus provident assumenda, quisquam ducimus ullam voluptatem quaerat
+          incidunt obcaecati aspernatur totam deleniti quod dolor hic inventore
+          architecto similique, harum facere tenetur dicta voluptates.
+        </p>
+      </div>
+    </div>
+    <div class="last-b">
+      <div class="last-t">
+        <h4>Resources</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          maxime recusandae, ab et alias expedita voluptatem quas eius nihil
+          totam?
+        </p>
+      </div>
+      <div class="last-t">
+        <h4>About us</h4>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
+          accusantium nobis nesciunt aperiam reprehenderit voluptas tenetur quo!
+        </p>
+      </div>
+      <div class="last-t">
+        <h4>Stay in touch</h4>
+        <div class="social-icons">
+          <a href="#" class="icon fb"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" class="icon tw"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="icon yt"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="icon in"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+      <div class="last">
+        <div class="last-form">
+          <input type="text" placeholder="Your Name" class="inp1" />
+          <input type="email" placeholder="Your Email" class="inp2" />
+          <button class="last-fbtn">join Newsletter</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </body>
+</html>
